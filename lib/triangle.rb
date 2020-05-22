@@ -14,22 +14,18 @@ class Triangle
       raise TriangleError
       
       
-    elsif (l1 + l2) < l3 || (l2 + l3) < l1 || (l1 + l3) < length_2
+    elsif (l1 + l2) < l3 || (l2 + l3) < l1 || (l1 + l3) < l2
       raise TriangleError
-      # begin
-      #   raise TriangleError
-      # rescue TriangleError => error 
-      #     puts error.message 
-      # end
+      
       
     else
-      if length_1 == length_2 || length_2 == length_3 || length_1 == length_3
+      if l1 == l2 || l2 == l3 || l1 == l3
         :isosceles
         
-      elsif length_1 == length_2 && length_1 == length_3 && length_2 == length_3
+      elsif l1 == l2 && l1 == l3 && l2 == l3
         :equilateral
         
-      elsif length_1 != length_2 && length_2 != length_3 && length_1 != length_3
+      else
         :scalene
         
       end
